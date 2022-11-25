@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponseRedirect, reverse
 from django.views.generic import RedirectView, TemplateView
 from django.contrib import auth
+from django.contrib.auth.decorators import login_required
 
 
 class IndexView(TemplateView):
@@ -33,3 +34,10 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return HttpResponseRedirect(reverse('mainapp:index'))
+
+
+@login_required
+def diagnostic(request):
+    if request.method == 'POST':
+        pass
+    return render(request, 'mainapp/diagnostic.html')

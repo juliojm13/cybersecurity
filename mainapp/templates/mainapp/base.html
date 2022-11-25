@@ -46,20 +46,20 @@
                 <h4>Menu</h4>
                 <ul class="list-unstyled components">
                     <li class="active">
-                        <a href="{% url 'mainapp:index' %}"><i class="fa fa-dashboard yellow_color"></i>
+                        <a href="{% url 'mainapp:index' %}"><i class="fa fa-university yellow_color"></i>
                             <span>Inicio</span></a>
                     </li>
                     {% if not request.user.is_authenticated %}
-                    <li><a href="{% url 'mainapp:login' %}"><i class="fa fa-clock-o orange_color"></i> <span>Iniciar sesion</span></a>
+                    <li><a href="{% url 'mainapp:login' %}"><i class="fa fa-male orange_color"></i> <span>Iniciar sesion</span></a>
                     </li>
                     {% endif %}
                     {% if request.user.is_authenticated %}
                     <li><a href="/admin"><i class="fa fa-table purple_color2"></i> <span>Base de datos</span></a></li>
                     <li>
-                        <a href="{% url 'mainapp:index' %}">
-                            <i class="fa fa-paper-plane red_color"></i> <span>Realizar diagnostico</span></a>
+                        <a href="{% url 'mainapp:diagnostic' %}">
+                            <i class="fa fa-dashboard red_color"></i> <span>Realizar diagnostico</span></a>
                     </li>
-                    <li><a href="{% url 'mainapp:logout' %}"><i class="fa fa-clock-o orange_color"></i> <span>Salir</span></a>
+                    <li><a href="{% url 'mainapp:logout' %}"><i class="fa fa-mail-reply orange_color"></i> <span>Salir</span></a>
                     </li>
                     {% endif %}
 
