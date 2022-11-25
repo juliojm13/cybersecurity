@@ -1,0 +1,33 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block title %}
+    <title>Login</title>
+    {% endblock %}
+{% block content %}
+   <div class="center verticle_center full_height">
+      <div class="login_section">
+         <div class="logo_login">
+
+         </div>
+         <div class="login_form">
+            <form method="post" action="/login/">
+               {% csrf_token %}
+               <fieldset>
+                  <div class="field">
+                     <label class="label_field">username</label>
+                     <input type="text" name="username" placeholder="username" />
+                  </div>
+                  <div class="field">
+                     <label class="label_field">Password</label>
+                     <input type="password" name="password" placeholder="Password" />
+                  </div>
+                  <div class="field margin_0">
+                     <label class="label_field hidden">hidden label</label>
+                     <button type="submit" class="main_bt">Ingresar</button>
+                  </div>
+               </fieldset>
+            </form>
+         </div>
+      </div>
+   </div>
+{% endblock %}
