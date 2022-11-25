@@ -1,0 +1,23 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block content %}
+         <div class="form">
+            <form method="post" action="/diagnostic/">
+               {% csrf_token %}
+               <fieldset>
+                  <div class="field">
+                     <label class="label_field">username</label>
+                     <input type="text" name="username" placeholder="username" />
+                  </div>
+                  <div class="field">
+                     <label class="label_field">Password</label>
+                     <input type="password" name="password" placeholder="Password" />
+                  </div>
+                  <div class="field margin_0">
+                     <label class="label_field hidden">hidden label</label>
+                     <button type="submit" class="main_bt">Ingresar</button>
+                  </div>
+               </fieldset>
+            </form>
+         </div>
+{% endblock %}
