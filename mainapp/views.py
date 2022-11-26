@@ -41,7 +41,8 @@ def logout(request):
 def diagnostic(request):
     if request.method == 'POST':
         print(request.POST)
-        gr = 0
+        gr = int(request.POST['gr_1']) + int(request.POST['gr_2']) + int(request.POST['gr_3']) + int(
+            request.POST['gr_4'])
         ga = 30
         gia = 0
         gav = 0
@@ -66,3 +67,12 @@ def diagnostic(request):
             total=total,
         )
     return render(request, 'mainapp/diagnostic.html')
+
+
+@login_required
+def results(request):
+    data = Diagnostic.objects.all()
+    context = {
+        'data': data
+    }
+    return render(request, 'mainapp/results.html', context)
