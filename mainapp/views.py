@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponseRedirect, reverse
 from django.views.generic import RedirectView, TemplateView
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
+from .models import Diagnostic
 
 
 class IndexView(TemplateView):
@@ -39,5 +40,39 @@ def logout(request):
 @login_required
 def diagnostic(request):
     if request.method == 'POST':
-        pass
+        print(request.POST)
+        gr = int(request.POST['gr_1']) + int(request.POST['gr_2']) + int(request.POST['gr_3']) + int(
+            request.POST['gr_4'])
+        ga = 30
+        gia = 0
+        gav = 0
+        cea = 40
+        iic = 0
+        ri = 0
+        gde = 50
+        cp = 10
+        gpc = 0
+        total = gr + ga + gia + gav + cea + iic + ri + gde + cp + gpc
+        Diagnostic.objects.create(
+            gr=gr,
+            ga=ga,
+            gia=gia,
+            gav=gav,
+            cea=cea,
+            iic=iic,
+            ri=ri,
+            gde=gde,
+            cp=cp,
+            gpc=gpc,
+            total=total,
+        )
     return render(request, 'mainapp/diagnostic.html')
+
+
+@login_required
+def results(request):
+    data = Diagnostic.objects.all()
+    context = {
+        'data': data
+    }
+    return render(request, 'mainapp/results.html', context)
