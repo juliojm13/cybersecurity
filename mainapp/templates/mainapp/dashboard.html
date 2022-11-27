@@ -1,0 +1,121 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block title %}
+    <title>Graficos</title>
+{% endblock %}
+{% block head %}
+<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js">     </script>
+<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-radar.min.js"></script>
+<style type="text/css">
+    #radar {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+</style>
+{% endblock %}
+{% block content %}
+<div class="white_shd full margin_bottom_30">
+    <div class="full graph_head">
+        <div class="heading1 margin_0">
+            <h2>Resultado del diagnoscico del {{object.created}}</h2>
+        </div>
+    </div>
+    <div class="table_section padding_infor_info">
+        <div class="table-responsive-sm">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Modelo</th>
+                    <th>Puntaje</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Gestión de riesgos</td>
+                    <td>{{object.gr}}</td>
+                </tr>
+                <tr>
+                    <td>Gestión de activos</td>
+                    <td>{{object.ga}}</td>
+                </tr>
+                <tr>
+                    <td>Gestión de identidad y acceso</td>
+                    <td>{{object.gia}}</td>
+                </tr>
+                <tr>
+                    <td>Gestión de amenazas y vulnerabilidades</td>
+                    <td>{{object.gav}}</td>
+                </tr>
+                <tr>
+                    <td>Conciencia del Estado Actual</td>
+                    <td>{{object.cea}}</td>
+                </tr>
+                <tr>
+                    <td> Intercambio de Información y Comunicaciones</td>
+                    <td>{{object.iic}}</td>
+                </tr>
+                <tr>
+                    <td>Respuesta a Incidentes:</td>
+                    <td>{{object.ri}}</td>
+                </tr>
+                <tr>
+                    <td>Gestión de dependencias externas:</td>
+                    <td>{{object.gde}}</td>
+                </tr>
+                <tr>
+                    <td>Capacitación del personal </td>
+                    <td>{{object.cp}}</td>
+                </tr>
+                <tr>
+                    <td>Gestión de programa de ciberseguridad</td>
+                    <td>{{object.gpc}}</td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>{{object.total}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!--radar chart-->
+<div class="full" id="radar"></div>
+<!--end radar chart-->
+<script>
+  anychart.onDocumentReady(function () {
+    var data1 = [
+  {x: "gr", value: {{object.gr}}},
+  {x: "ga", value: {{object.ga}}},
+  {x: "gia", value: {{object.gia}}},
+  {x: "gav", value: {{object.gav}}},
+  {x: "cea", value: {{object.cea}}},
+  {x: "iic ", value: {{object.iic}}},
+  {x: "ri", value: {{object.ri}}},
+  {x: "gde", value: {{object.gde}}},
+  {x: "cp", value: {{object.cp}}},
+  {x: "gpc", value: {{object.gpc}}},
+ ];
+
+var chart = anychart.radar();
+
+chart.yScale()
+  .minimum(0)
+  .maximum(100)
+  .ticks({'interval':5});
+
+chart.area(data1).name('Results').markers(true).fill("#E55934", 0.3).stroke("#E55934")
+
+chart.title("Resultados del diagnostico");
+
+chart.container('radar');
+chart.draw();
+
+
+
+  });
+</script>
+{% endblock %}l>

@@ -11,7 +11,7 @@
     <!-- site metas -->
     <!-- Nombre de la pestana-->
     {% block title %}
-    <title>Diagnostico de ciberseguridad</title>
+    <title>Inicio</title>
     {% endblock %}
     <meta name="keywords" content="">
     <meta name="description" content="">
@@ -36,6 +36,8 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    {% block head %}
+    {% endblock %}
 </head>
 <body class="dashboard dashboard_1">
 <div class="full_container">
@@ -94,7 +96,6 @@
 <script src="{% static 'js/Chart.min.js' %}"></script>
 <script src="{% static 'js/Chart.bundle.min.js' %}"></script>
 <script src="{% static 'js/utils.js' %}"></script>
-<script src="{% static 'js/analyser.js' %}"></script>
 <!-- nice scrollbar -->
 <script src="{% static 'js/perfect-scrollbar.min.js' %}"></script>
 <script>
@@ -102,8 +103,6 @@
 
 </script>
 <!-- custom js -->
-<script src="{% static 'js/custom.js' %}"></script>
-<script src="{% static 'js/chart_custom_style1.js' %}"></script>
 <script type='text/javascript' src='{% static "js/select.js" %}'></script>
 </body>
 </html>

@@ -53,6 +53,10 @@
                <div class="read_more">
                   <div class="center"><a class="main_bt read_bt" href="{% url 'mainapp:login' %}">Iniciar sesion</a></div>
                </div>
+               {%else%}
+               <div class="read_more">
+                  <div class="center"><a class="main_bt read_bt" href="{% url 'mainapp:diagnostic' %}">Realizar diagnostico</a></div>
+               </div>
                {% endif %}
             </div>
          </div>

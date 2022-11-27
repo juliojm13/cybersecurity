@@ -66,6 +66,7 @@ def diagnostic(request):
             gpc=gpc,
             total=total,
         )
+        return HttpResponseRedirect(reverse('mainapp:results'))
     return render(request, 'mainapp/diagnostic.html')
 
 
@@ -76,3 +77,12 @@ def results(request):
         'data': data
     }
     return render(request, 'mainapp/results.html', context)
+
+
+@login_required
+def dashboard(request, pk):
+    data = Diagnostic.objects.get(pk=pk)
+    context = {
+        'object': data
+    }
+    return render(request, 'mainapp/dashboard.html', context)
