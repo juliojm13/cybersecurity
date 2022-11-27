@@ -1,38 +1,39 @@
 {% extends 'mainapp/base.html' %}
 {% load static %}
 {% block title %}
-    <title>Resultados</title>
-    {% endblock %}
+<title>Resultados</title>
+{% endblock %}
 {% block content %}
 <div class="white_shd full margin_bottom_30">
-  <div class="full graph_head">
-     <div class="heading1 margin_0">
-        <h2>Resultados</h2>
-     </div>
-  </div>
-  <div class="table_section padding_infor_info">
-     <div class="table-responsive-sm">
-        <table class="table table-bordered">
-           <thead>
-              <tr>
-                 <th>ID</th>
-                 <th>Fecha del diagnostico</th>
-                 <th>Puntaje total</th>
-                 <th>Link</th>
-              </tr>
-           </thead>
-           <tbody>
-           {% for object in data %}
-              <tr>
-                 <td>{{object.pk}}</td>
-                 <td>{{object.created}}</td>
-                 <td>{{object.total}}</td>
-                 <td><a href="{%url 'mainapp:dashboard' object.pk %}"> Ver graficos</a></td>
-              </tr>
-           {%endfor%}
-           </tbody>
-        </table>
-     </div>
-  </div>
+    <div class="full graph_head">
+        <div class="heading1 margin_0">
+            <h2>Resultados</h2>
+        </div>
+    </div>
+    <div class="table_section padding_infor_info">
+        <div class="table-responsive-sm">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Fecha del diagnostico</th>
+                    <th>Puntaje total</th>
+                    <th>Link</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for object in data %}
+                <tr>
+                    <td>{{object.pk}}</td>
+                    <td>{{object.created}}</td>
+                    <td>{{object.total}}</td>
+                    <td><a href="{%url 'mainapp:dashboard' object.pk %}"> Ver grafico</a></td>
+                </tr>
+                {%endfor%}
+                </tbody>
+            </table>
+            <a class="main_bt read_bt" href="{%url 'mainapp:index'%}">Ver grafico de barras</a>
+        </div>
+    </div>
 </div>
 {% endblock %}

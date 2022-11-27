@@ -16,44 +16,6 @@
 </style>
 {% endblock %}
 {% block content %}
-    <!--radar chart-->
-    <div class="col">
-        <div class="white_shd full margin_bottom_30">
-            <div class="full graph_head">
-                <div class="heading1 margin_0">
-                    <h2>Radar Chart</h2>
-                </div>
-            </div>
-            <div id="radar"></div>
-        </div>
-    </div>
-    <!--end radar chart-->
-    <!--linear chart-->
-    <div class="col-lg-6">
-        <div class="white_shd full margin_bottom_30">
-            <div class="full graph_head">
-                <div class="heading1 margin_0">
-                    <h2>Line Chart</h2>
-                </div>
-            </div>
-            <div class="map_section padding_infor_info">
-                <div style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"
-                     class="chartjs-size-monitor">
-                    <div class="chartjs-size-monitor-expand"
-                         style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
-                        <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
-                    </div>
-                    <div class="chartjs-size-monitor-shrink"
-                         style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
-                        <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
-                    </div>
-                </div>
-                <canvas id="bar_chart" style="display: block; width: 426px; height: 213px;"
-                        class="chartjs-render-monitor" width="426" height="213"></canvas>
-            </div>
-        </div>
-    </div>
-    <!--end linear chart-->
 <div class="white_shd full margin_bottom_30">
     <div class="full graph_head">
         <div class="heading1 margin_0">
@@ -119,6 +81,10 @@
         </div>
     </div>
 </div>
+
+<!--radar chart-->
+<div class="full" id="radar"></div>
+<!--end radar chart-->
 <script>
   anychart.onDocumentReady(function () {
     var data1 = [
@@ -140,7 +106,10 @@ chart.yScale()
   .minimum(0)
   .maximum(100)
   .ticks({'interval':5});
-chart.line(data1)
+
+chart.area(data1).name('Results').markers(true).fill("#E55934", 0.3).stroke("#E55934")
+
+chart.title("Resultados del diagnostico");
 
 chart.container('radar');
 chart.draw();
