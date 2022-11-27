@@ -41,11 +41,17 @@
 <canvas id="barChart"></canvas>
 <script>
     var canvasElement = document.getElementById("barChart")
+    var dates = []
+    var scores = []
+    {% for object in data %}
+    dates.push('{{object.created}}')
+    scores.push({{object.total}})
+    {%endfor%}
     var config = {
         type: "bar",
         data: {
-        labels: ["Hello"],
-        datasets: [{label: "Puntaje", data:[100]}],
+        labels: dates,
+        datasets: [{label: "Puntaje", data:scores}],
         },
     }
     var barChart = new Chart(canvasElement,config)
