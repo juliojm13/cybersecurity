@@ -3,6 +3,9 @@
 {% block title %}
 <title>Resultados</title>
 {% endblock %}
+{% block head %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
 {% block content %}
 <div class="white_shd full margin_bottom_30">
     <div class="full graph_head">
@@ -27,13 +30,26 @@
                     <td>{{object.pk}}</td>
                     <td>{{object.created}}</td>
                     <td>{{object.total}}</td>
-                    <td><a href="{%url 'mainapp:dashboard' object.pk %}"> Ver grafico</a></td>
+                    <td><a href="{%url 'mainapp:dashboard' object.pk %}"> Ver grafico de radar</a></td>
                 </tr>
                 {%endfor%}
                 </tbody>
             </table>
-            <a class="main_bt read_bt" href="{%url 'mainapp:index'%}">Ver grafico de barras</a>
         </div>
     </div>
 </div>
+<canvas id="barChart"></canvas>
+<script>
+    var canvasElement = document.getElementById("barChart")
+    var config = {
+        type: "bar",
+        data: {
+        labels: ["Hello"],
+        datasets: [{label: "Puntaje", data:[100]}],
+        },
+    }
+    var barChart = new Chart(canvasElement,config)
+
+
+</script>
 {% endblock %}
