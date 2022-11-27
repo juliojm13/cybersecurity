@@ -1,0 +1,126 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block title %}
+    <title>Graficos</title>
+    {% endblock %}
+{% block content %}
+<div class="row">
+    <!--radar chart-->
+    <div class="col-lg-6">
+        <div class="white_shd full margin_bottom_30">
+            <div class="full graph_head">
+                <div class="heading1 margin_0">
+                    <h2>Radar Chart</h2>
+                </div>
+            </div>
+            <div class="map_section padding_infor_info">
+                <div style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"
+                     class="chartjs-size-monitor">
+                    <div class="chartjs-size-monitor-expand"
+                         style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                        <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+                    </div>
+                    <div class="chartjs-size-monitor-shrink"
+                         style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                        <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                    </div>
+                </div>
+                <canvas id="radar_chart" style="display: block; width: 426px; height: 213px;"
+                        class="chartjs-render-monitor" width="426" height="213"></canvas>
+            </div>
+        </div>
+    </div>
+    <!--end radar chart-->
+    <!--linear chart-->
+    <div class="col-lg-6">
+        <div class="white_shd full margin_bottom_30">
+            <div class="full graph_head">
+                <div class="heading1 margin_0">
+                    <h2>Line Chart</h2>
+                </div>
+            </div>
+            <div class="map_section padding_infor_info">
+                <div style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"
+                     class="chartjs-size-monitor">
+                    <div class="chartjs-size-monitor-expand"
+                         style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                        <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+                    </div>
+                    <div class="chartjs-size-monitor-shrink"
+                         style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                        <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                    </div>
+                </div>
+                <canvas id="bar_chart" style="display: block; width: 426px; height: 213px;"
+                        class="chartjs-render-monitor" width="426" height="213"></canvas>
+            </div>
+        </div>
+    </div>
+    <!--end linear chart-->
+</div>
+<div class="white_shd full margin_bottom_30">
+    <div class="full graph_head">
+        <div class="heading1 margin_0">
+            <h2>Resultado del diagnoscico del {{object.created}}</h2>
+        </div>
+    </div>
+    <div class="table_section padding_infor_info">
+        <div class="table-responsive-sm">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Modelo</th>
+                    <th>Puntaje</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Gestión de riesgos</td>
+                    <td>{{object.gr}}</td>
+                </tr>
+                <tr>
+                    <td>Gestión de activos</td>
+                    <td>{{object.ga}}</td>
+                </tr>
+                <tr>
+                    <td>Gestión de identidad y acceso</td>
+                    <td>{{object.gia}}</td>
+                </tr>
+                <tr>
+                    <td>Gestión de amenazas y vulnerabilidades</td>
+                    <td>{{object.gav}}</td>
+                </tr>
+                <tr>
+                    <td>Conciencia del Estado Actual</td>
+                    <td>{{object.cea}}</td>
+                </tr>
+                <tr>
+                    <td> Intercambio de Información y Comunicaciones</td>
+                    <td>{{object.iic}}</td>
+                </tr>
+                <tr>
+                    <td>Respuesta a Incidentes:</td>
+                    <td>{{object.ri}}</td>
+                </tr>
+                <tr>
+                    <td>Gestión de dependencias externas:</td>
+                    <td>{{object.gde}}</td>
+                </tr>
+                <tr>
+                    <td>Capacitación del personal </td>
+                    <td>{{object.cp}}</td>
+                </tr>
+                <tr>
+                    <td>Gestión de programa de ciberseguridad</td>
+                    <td>{{object.gpc}}</td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>{{object.total}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}l>
