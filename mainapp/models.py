@@ -17,3 +17,10 @@ class Diagnostic(models.Model):
 
     def __str__(self):
         return f'Diagnóstico {self.created}'
+
+
+class Organisation(models.Model):
+    org_name = models.CharField(verbose_name='nombre de la organización', max_length=256, blank=False)
+
+    def __str__(self):
+        return self.org_name

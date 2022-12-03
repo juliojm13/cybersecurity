@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponseRedirect, reverse
 from django.views.generic import RedirectView, TemplateView
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
-from .models import Diagnostic
+from .models import Diagnostic, Organisation
 
 
 class IndexView(TemplateView):
@@ -68,6 +68,15 @@ def diagnostic(request):
         )
         return HttpResponseRedirect(reverse('mainapp:results'))
     return render(request, 'mainapp/diagnostic.html')
+
+
+@login_required
+def organisation(request):
+    data = Organisation.objects.all()
+    context = {
+        'object_list': data
+    }
+    return render(request, 'mainapp/organisation.html', context)
 
 
 @login_required
