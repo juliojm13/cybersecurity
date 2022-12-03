@@ -92,11 +92,16 @@ def organisation_form(request):
     if request.method == 'POST':
         organization_form = AddOrganizationForm(request.POST)
         if organization_form.is_valid():
-            # print(request.POST['org_name'])
-            # print(Organisation.objects.filter(org_name=request.POST['org_name']))
-            organization_form.save()
-
-            return HttpResponseRedirect(reverse('mainapp:organisation'))
+            same_org = Organisation.objects.filter(org_name=request.POST['org_name'])
+            context = {
+                'same_obj': same_org,
+                'new_obj': request.POST['org_name']
+            }
+            if not same_org:
+                organization_form.save()
+            else:
+                return render(request, 'mainapp/checking_org.html', context)
+            return render(request, 'mainapp/checking_org.html', context)
         #     # return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
         else:
             # return super().get(request, *args, **kwargs)
