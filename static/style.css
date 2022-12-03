@@ -3512,15 +3512,15 @@ table.projects tr td:first-child {
 .dropdownhidden {
 	display: none;
 	}
-/*
+
 .dropdownvisible {
 	height: auto;
 	}
-*/
-.dropdownvisible {
+
+fieldset.field-second.org ul.dropdownvisible{
     height: 200px;
     overflow-y: scroll;
-	}
+    }
 
 
 /* CUSTOM */
@@ -3536,4 +3536,21 @@ table.projects tr td:first-child {
 }
 .leg-one{
     padding: 0 10px;
+}
+
+.org-form{
+    text-align: center !important;
+    font-size: 18px !important;
+}
+
+.asteriskField{
+    display:none;
+}
+.grey_col{
+    background: grey;
+    border-color: grey;
+}
+.grey_col:hover{
+    background: #93a5b8;
+    border-color: #93a5b8;
 }

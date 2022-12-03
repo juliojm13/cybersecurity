@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-    <title>Empresas</title>
+    <title>Microredes</title>
 {% endblock %}
 
 {% block head %}
@@ -22,20 +22,32 @@
 <div class="white_shd full margin_bottom_30">
     <div class="full graph_head">
         <div class="heading1 margin_0">
-            <h2>Seleccione su empresa de la lista </h2>
+            <h2>Seleccione su microred de la lista </h2>
         </div>
     </div>
     <div class="table_section padding_infor_info">
         <div class="table-responsive-sm">
-            <fieldset class="field-second">
-                <h1><label class="col-md-8">¿Su empresa está en la lista?</label></h1>
+            <fieldset class="field-second org">
+                <h1><label class="col-md-8">¿Su microred está en la lista?</label></h1>
                 <select class="turnintodropdown" name="organisation">
-                    <option value="0">Seleccione una empresa</option>
+                    <option value="0">Seleccione una microred</option>
                     {% for object in object_list %}
                         <option value="0">{{ object }}</option>
                     {% endfor %}
                 </select>
+
+                  <div class="field margin_top_50">
+                     <label class="label_field hidden">hidden label</label>
+                     <button type="submit" class="main_bt">Elegir</button>
+                  </div>
+
             </fieldset>
+
+                    <div class="button_block">
+                        <a href="{% url 'mainapp:orgform' %}" type="submit" class="btn cur-p btn-outline-secondary">Añadir microred</a>
+                    </div>
+
+
         </div>
     </div>
 </div>
@@ -43,4 +55,4 @@
 <!--radar chart-->
 <div class="full" id="radar"></div>
 
-{% endblock %}l>
+{% endblock %}
