@@ -4,34 +4,34 @@
 {% block content %}
 <main id="main">
 
-    <div class="site-section pb-0 site-portfolio comment-center">
-      <div class="container">
-        <div class="row mb-50 align-items-end">
-          <div class="col-md-8" data-aos="fade-up">
+<div class="white_shd full margin_bottom_30">
+    <div class="full graph_head">
+        <div class="heading1 margin_0">
               {% if not same_obj %}
 
                 <h2>¡Felicidades!</h2>
-                <p class="mb-0">
-                 La microred "{{new_obj}}" se ha creado con éxito.
-                </p>
+                    <p class="mb-0">
+                        La microred "{{new_obj}}" se ha creado con éxito.
+                    </p>
                 <p>Regrese a la página con todas las microredes y seleccione su microred de la lista.</p>
 
               {% else %}
                 <h2>¡Esta microred ya existe!</h2>
               {% endif %}
-          </div>
+
+
+
         </div>
 
-        <div class="row">
-          <div class="col-md-6  mt-40" data-aos="fade-up">
-                    <div class="button_block">
-                        <a href="{% url 'mainapp:organisation' %}" type="submit" class="btn cur-p btn-outline-secondary">Microredes</a>
-                    </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </main>
+            <div class="row">
+              <div class="col-md-6  mt-40" data-aos="fade-up">
+                <div class="button_block">
+                    <a href="{% url 'mainapp:organisation' %}" type="submit" class="btn cur-p btn-outline-secondary">Microredes</a>
+                </div>
+              </div>
+            </div>
+  </div>
+</div>
+</main>
 
 {% endblock %}
