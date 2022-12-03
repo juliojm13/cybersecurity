@@ -1,8 +1,11 @@
+from django.http import HttpResponse
 from django.shortcuts import render, HttpResponseRedirect, reverse
 from django.views.generic import RedirectView, TemplateView
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
-from .models import Diagnostic
+
+from .forms import AddOrganizationForm
+from .models import Diagnostic, Organisation
 
 
 class IndexView(TemplateView):
@@ -68,6 +71,38 @@ def diagnostic(request):
         )
         return HttpResponseRedirect(reverse('mainapp:results'))
     return render(request, 'mainapp/diagnostic.html')
+
+
+@login_required
+def organisation(request):
+    data = Organisation.objects.order_by('org_name')
+    context = {
+        'object_list': data
+    }
+    return render(request, 'mainapp/organisation.html', context)
+
+
+@login_required
+def organisation_form(request):
+    organization_form = AddOrganizationForm()
+
+    context = {
+        'organization_form': organization_form
+    }
+    if request.method == 'POST':
+        organization_form = AddOrganizationForm(request.POST)
+        if organization_form.is_valid():
+            # print(request.POST['org_name'])
+            # print(Organisation.objects.filter(org_name=request.POST['org_name']))
+            organization_form.save()
+
+            return HttpResponseRedirect(reverse('mainapp:organisation'))
+        #     # return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+        else:
+            # return super().get(request, *args, **kwargs)
+            return HttpResponse('Неверно заполненная форма. Попробуйте еще раз.')
+
+    return render(request, 'mainapp/organizationform.html', context)
 
 
 @login_required

@@ -1,0 +1,46 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>Microredes</title>
+{% endblock %}
+
+{% block head %}
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js">     </script>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-radar.min.js"></script>
+    <style type="text/css">
+        #radar {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="white_shd full margin_bottom_30">
+    <div class="full graph_head">
+        <div class="heading1 margin_0">
+            <h2>Añadir una microred a la lista</h2>
+        </div>
+    </div>
+    <div class="table_section padding_infor_info">
+        <div class="table-responsive-sm org-form">
+                <fieldset>
+
+                    {% csrf_token %}
+                    {% crispy organization_form %}
+
+               </fieldset>
+
+        </div>
+    </div>
+</div>
+
+<!--radar chart-->
+<div class="full" id="radar"></div>
+
+{% endblock %}

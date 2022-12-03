@@ -58,6 +58,10 @@
                     {% if request.user.is_authenticated %}
                     <li><a href="/admin"><i class="fa fa-table purple_color2"></i> <span>Base de datos</span></a></li>
                     <li>
+                        <a href="{% url 'mainapp:organisation' %}">
+                            <i class='fa fa-briefcase' style='color: #f3da35'></i> <span>Microredes</span></a>
+                    </li>
+                    <li>
                         <a href="{% url 'mainapp:diagnostic' %}">
                             <i class="fa fa-dashboard red_color"></i> <span>Realizar diagnostico</span></a>
                     </li>
