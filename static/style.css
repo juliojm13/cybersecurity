@@ -3512,9 +3512,14 @@ table.projects tr td:first-child {
 .dropdownhidden {
 	display: none;
 	}
-
+/*
 .dropdownvisible {
 	height: auto;
+	}
+*/
+.dropdownvisible {
+    height: 200px;
+    overflow-y: scroll;
 	}
 
 
