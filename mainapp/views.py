@@ -41,9 +41,12 @@ def logout(request):
 
 
 @login_required
-def diagnostic(request):
+def diagnostic(request, pk):
+    context = {
+        'pk': pk
+    }
     if request.method == 'POST':
-        print(request.POST)
+        organization = Organisation.objects.get(pk=pk)
 
         gr = int(request.POST['gr_1']) + int(request.POST['gr_2']) + int(request.POST['gr_3']) + int(
             request.POST['gr_4']) + int(request.POST['gr_5']) + int(request.POST['gr_6']) + int(
@@ -125,9 +128,10 @@ def diagnostic(request):
             cp=cp,
             gpc=gpc,
             total=total,
+            id_organization=organization,
         )
-        return HttpResponseRedirect(reverse('mainapp:results'))
-    return render(request, 'mainapp/diagnostic.html')
+        return HttpResponseRedirect(reverse('mainapp:results', kwargs={'pk': pk}))
+    return render(request, 'mainapp/diagnostic.html', context)
 
 
 @login_required
