@@ -27,21 +27,29 @@
     </div>
     <div class="table_section padding_infor_info">
         <div class="table-responsive-sm">
+
             <fieldset class="field-second org">
                 <h1><label class="col-md-8">¿Su microred está en la lista?</label></h1>
-                <select class="turnintodropdown" name="organisation">
-                    <option value="0">Seleccione una microred</option>
-                    {% for object in object_list %}
-                        <option value="0">{{ object }}</option>
-                    {% endfor %}
-                </select>
-
-                  <div class="field margin_top_50">
-                     <label class="label_field hidden">hidden label</label>
-                     <button type="submit" class="main_bt">Elegir</button>
-                  </div>
+              <div class="wrapper">
+                      <select class="turnintodropdown selection" name="organisation">
+                        <option value="0">Seleccione una microred</option>
+                        {% for object in object_list %}
+                            <option value="0">{{ object }}</option>
+                        {% endfor %}
+                      </select>
+                      <div class="field">
+                         <label class="label_field hidden">hidden label</label>
+                         <button type="submit" class="main_bt">Elegir</button>
+                      </div>
+                      <div class="field">
+                         <label class="label_field hidden">hidden label</label>
+                         <button type="submit" class="main_bt">Elegir</button>
+                      </div>
+              </div>
 
             </fieldset>
+
+
 
                     <div class="button_block">
                         <a href="{% url 'mainapp:orgform' %}" type="submit" class="btn cur-p btn-outline-secondary">Añadir microred</a>
