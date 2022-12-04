@@ -3559,8 +3559,6 @@ fieldset.field-second.org ul.dropdownvisible{
 
 }
 
-.selection{
-    display: flex;
-    flex-direction: column;
+div.selection{
     flex: 0 0 20%;
 }
