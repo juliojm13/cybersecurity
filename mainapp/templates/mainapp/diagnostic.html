@@ -10,7 +10,7 @@
             <div class="col-md-10">
                 <div class="white_shd full margin_bottom_30">
 
-                    <form action="/diagnostic/" method="POST">
+                    <form action="{% url 'mainapp:diagnostic' pk %}" method="POST">
                         {% csrf_token %}
                         <fieldset class="field-first">
                             <legend class="leg-one"><h2><i class="fa fa-folder-open"></i>Gestión de riesgos</h2>
