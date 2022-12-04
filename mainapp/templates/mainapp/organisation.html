@@ -31,19 +31,21 @@
             <fieldset class="field-second org">
                 <h1><label class="col-md-8">¿Su microred está en la lista?</label></h1>
               <div class="wrapper">
-                      <select class="turnintodropdown selection" name="organisation">
-                        <option value="0">Seleccione una microred</option>
-                        {% for object in object_list %}
-                            <option value="0">{{ object }}</option>
-                        {% endfor %}
-                      </select>
-                      <div class="field">
-                         <label class="label_field hidden">hidden label</label>
-                         <button type="submit" class="main_bt">Elegir</button>
+                      <div class="selection">
+                          <select class="turnintodropdown" name="organisation">
+                            <option value="0">Seleccione una microred</option>
+                            {% for object in object_list %}
+                                <option value="0">{{ object }}</option>
+                            {% endfor %}
+                          </select>
                       </div>
                       <div class="field">
                          <label class="label_field hidden">hidden label</label>
-                         <button type="submit" class="main_bt">Elegir</button>
+                         <button type="submit" class="main_bt">Realizar diagnostico</button>
+                      </div>
+                      <div class="field">
+                         <label class="label_field hidden">hidden label</label>
+                         <button type="submit" class="main_bt">Ver resultados</button>
                       </div>
               </div>
 
