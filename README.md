@@ -1,30 +1,79 @@
-# The project "Cybersecurity"
-+ For starting find a green botton that names *Code*. Click it and copy link from this.
-+ Create some empty folder for your project in your Desktop and open this folder with using PyCharm
-+ Next step: choose the window *Terminal* in Pycharm and check if you located in your new folder.
-Then you need to do this command with copied link (we are cloning repo):
+# Project "Cybersecurity in microgrids"
+In this project you can find a model to diagnose the level of cybersecurity in a microgrid.
++ For starting the project locally **you need to clone the code**, for that open a new console in your computer (We recommend to use Pycharm and work from the "Terminal window") and paste the code bellow to clone the code from this repo into your computer:
 
-```git clone https://github.com/juliojm13/cybersecurity.git```
+```
+git clone https://github.com/juliojm13/cybersecurity.git
+```
+After cloning the code, there must be a directory named "cybersecurity" in your computer if everything went okay, you can check it with this command:
+
+For Linux/Mac:
+```
+ls
+```
+For Windows:
+```
+dir
+```
+If you can see the directory "cybersecurity", now you have the code to run the project locally! :D
+
+**Now let's run the project**, for that:
+
 - We need to create a virtual environment (venv), do this command: 
-    - For Windows: ``` python -m venv venv ```
-    - For Linux/Mac:```python3 -m venv venv```
-- Will activate venv:
-```source venv/bin/activate```
+    - For Windows:
+    ``` 
+    python -m venv venv 
+    ```
+    
+    - For Linux/Mac:
+    ```
+    python3 -m venv venv
+    ```
+- After that activate the virtual environmen 'venv' with this command:
 
-After this movement you have to see a text *(venv)* in starting of string like this:
 ```
-(venv) polina@polina-VirtualBox:~/Desktop/daniala/cybersecurity
+source venv/bin/activate
 ```
-+ Then we will change folder but first of all check available folder. Use
-command: ```ls```
 
-You must see a folder *venv*, a folder with our project *cybersecurity*
-and file *README.MD* or something like that) Okey change folder. Use:
-```cd cybersecurity```.
-The path in command string have to change to neccessary folder.
-+ Now we need to install every apps that neccessary us in this project for that we need to find a 
-file *requarement.txt*. It has to be in the same folder where we are. Check it: ```ls```. Then install every apps:
-```pip install -r requarement.txt```
-+ After installing, we finally can open locally our project. Use: ```python manage.py runserver``` 
+If the activation went okay at the begining of the string in the console there must be a text *(venv)* like this:
 
+```(venv) user@user-VirtualBox:~/Desktop/projects/cybersecurity```
 
+Great! We are almost done!!
+
++ Then we have to go to the "cybersecurity" folder, for that run this command:
+
+```
+cd cybersecurity
+```
+Now we are in the project directory, by doing the next command we can see our files, pay attention that there **must** be a **manage.py** and **requirements.txt** files:
+
+For Linux/Mac:
+```
+ls
+```
+For Windows:
+```
+dir
+```
+
+If you can see our **manage.py** and **requirements.txt** files, then lets install all the libraries that are needed for the project with this command:
+```
+pip install -r requarement.txt
+```
+
+After installing, we can finally run locally our project, use:
+For Windows:
+
+```
+python manage.py runserver
+```
+
+For Linux/Mac:
+```
+python manage.py runserver
+```
+Now the project is runing!
+You can click the link in that is in the console to open the project in the browser (ussually is this one: http://127.0.0.1:8000/)
+
+Enjoy! ^_^
