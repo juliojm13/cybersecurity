@@ -3554,3 +3554,13 @@ fieldset.field-second.org ul.dropdownvisible{
     background: #93a5b8;
     border-color: #93a5b8;
 }
+.wrapper{
+    display: flex;
+
+}
+
+.selection{
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 20%;
+}
