@@ -75,9 +75,8 @@
 
           $("#select-org").on('change',function(){
                 var getValue=$(this).val();
-                 $('#to-diagnostic').attr('href',`/diagnostic/${getValue}/`);
-                 $('#to-results').attr('href',`/results/${getValue}/`);
-                console.log(getValue);
+                 $('#to-diagnostic').attr('href',`/diagnostic/${getValue}`);
+                 $('#to-results').attr('href',`/results/${getValue}`);
               });
         })
       })
