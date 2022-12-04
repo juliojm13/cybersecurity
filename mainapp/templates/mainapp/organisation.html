@@ -32,20 +32,21 @@
                 <h1><label class="col-md-8">¿Su microred está en la lista?</label></h1>
               <div class="wrapper">
                       <div class="selection">
-                          <select class="turnintodropdown" name="organisation">
+                          <select id="select-org" name="organisation">
                             <option value="0">Seleccione una microred</option>
                             {% for object in object_list %}
-                                <option value="0">{{ object }}</option>
+                                <option value= "{{ object.pk }}" onClick="getId(event)">{{ object }}</option>
+
                             {% endfor %}
                           </select>
                       </div>
                       <div class="field">
                          <label class="label_field hidden">hidden label</label>
-                         <button type="submit" class="main_bt">Realizar diagnostico</button>
+                         <a type="submit" id="to-diagnostic" class="main_bt">Realizar diagnostico</a>
                       </div>
                       <div class="field">
                          <label class="label_field hidden">hidden label</label>
-                         <button type="submit" class="main_bt">Ver resultados</button>
+                         <a type="submit" id="to-results" class="main_bt">Ver resultados</a>
                       </div>
               </div>
 
@@ -65,4 +66,19 @@
 <!--radar chart-->
 <div class="full" id="radar"></div>
 
+{% endblock %}
+
+{% block js %}
+      <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        $(document).ready(function() {
+
+          $("#select-org").on('change',function(){
+                var getValue=$(this).val();
+                 $('#to-diagnostic').attr('href',`/diagnostic/${getValue}`);
+                 $('#to-results').attr('href',`/results/${getValue}`);
+              });
+        })
+      })
+      </script>
 {% endblock %}
