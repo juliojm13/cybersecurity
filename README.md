@@ -1,4 +1,4 @@
-# Project "Cybersecurity in microgrids"
+# "Cybersecurity in microgrids"
 In this project you can find a model to diagnose the level of cybersecurity in a microgrid.
 + For starting the project locally **you need to clone the code**, for that open a new console in your computer (We recommend to use Pycharm and work from the "Terminal window") and paste the code bellow to clone the code from this repo into your computer:
 
