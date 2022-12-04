@@ -1,65 +1,67 @@
 {% extends 'mainapp/base.html' %}
 {% load static %}
 {% block content %}
-    <div class="white_shd full margin_bottom_30">
-      <div class="full graph_head">
-         <div class="heading1 margin_0">
+<div class="white_shd full margin_bottom_30">
+    <div class="full graph_head">
+        <div class="heading1 margin_0">
             <h3>Modelo para diagnosticar el nivel de ciberseguridad en una microred.</h3>
-         </div>
-      </div>
+        </div>
     </div>
-    <div class="white_shd full margin_bottom_30">
-      <div class="full graph_head">
-         <div class="heading1 margin_0">
+</div>
+<div class="white_shd full margin_bottom_30">
+    <div class="full graph_head">
+        <div class="heading1 margin_0">
             <h5>Basado en: NIST, ISO, C2M2</h5>
-         </div>
-      </div>
+        </div>
     </div>
-   <!--creadores-->
-      <div class="col">
-         <div class="dash_blog">
-            <div class="dash_blog_inner">
-               <div class="dash_head">
-                  <h3><span>Creado por</span></h3>
-               </div>
-               <div class="msg_list_main">
-                  <ul class="msg_list">
-                     <li>
+</div>
+<!--creadores-->
+<div class="col">
+    <div class="dash_blog">
+        <div class="dash_blog_inner">
+            <div class="dash_head">
+                <h3><span>Creado por</span></h3>
+            </div>
+            <div class="msg_list_main">
+                <ul class="msg_list">
+                    <li>
                         <span><img src="{% static 'images/daniela2.jpeg' %}" class="img-responsive" alt="#"></span>
                         <span>
                         <span class="name_user">Daniela Dolores Jiménez Mendieta</span>
                         <span class="msg_user">Trabajo de titulación</span><br>
                         <span class="msg_user">Para la obtención del título de ingeniero en electrónica y Telecomunicaciones</span>
                         </span>
-                     </li>
-                     <li>
+                    </li>
+                    <li>
                         <span><img src="{% static 'images/julio.jpeg' %}" class="img-responsive" alt="#"></span>
                         <span>
                         <span class="name_user">Julio Andrés Sumba Naula</span>
                         <span class="msg_user">Trabajo de titulación</span><br>
                         <span class="msg_user">Para la obtención del título de ingeniero en electrónica y Telecomunicaciones</span>
                         </span>
-                     </li>
-                     <li>
-                        <span><img src="{% static 'images/darwin.jpeg' %}" class="img-responsive" width="75px" height="75px" alt="#"></span>
+                    </li>
+                    <li>
+                        <span><img src="{% static 'images/darwin.jpeg' %}" class="img-responsive" width="75px"
+                                   height="75px" alt="#"></span>
                         <span>
                         <span class="name_user">Darwin Fabian Astudillo Salinas</span>
                         <span class="msg_user">Director del trabajo de titulación.</span>
                         </span>
-                     </li>
-                  </ul>
-               </div>
-               {% if not request.user.is_authenticated %}
-               <div class="read_more">
-                  <div class="center"><a class="main_bt read_bt" href="{% url 'mainapp:login' %}">Iniciar sesion</a></div>
-               </div>
-               {%else%}
-               <div class="read_more">
-                  <div class="center"><a class="main_bt read_bt" href="{% url 'mainapp:diagnostic' %}">Realizar diagnostico</a></div>
-               </div>
-               {% endif %}
+                    </li>
+                </ul>
             </div>
-         </div>
-      </div>
-   <!--endcreadores-->
-    {% endblock %}
+            {% if not request.user.is_authenticated %}
+            <div class="read_more">
+                <div class="center"><a class="main_bt read_bt" href="{% url 'mainapp:login' %}">Iniciar sesion</a></div>
+            </div>
+            {%else%}
+            <div class="read_more">
+                <div class="center"><a class="main_bt read_bt" href="{% url 'mainapp:organisation' %}">Elegir
+                    microred</a></div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<!--endcreadores-->
+{% endblock %}
