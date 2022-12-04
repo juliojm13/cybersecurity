@@ -168,8 +168,8 @@ def organisation_form(request):
 
 
 @login_required
-def results(request):
-    data = Diagnostic.objects.all()
+def results(request, pk):
+    data = Diagnostic.objects.filter(id_organization=pk)
     context = {
         'data': data
     }

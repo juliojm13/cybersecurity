@@ -19,6 +19,7 @@
                 <thead>
                 <tr>
                     <th>ID</th>
+                    <th>Microred</th>
                     <th>Fecha del diagnostico</th>
                     <th>Puntaje total</th>
                     <th>Link</th>
@@ -28,6 +29,7 @@
                 {% for object in data %}
                 <tr>
                     <td>{{object.pk}}</td>
+                    <td>{{object.id_organization}}</td>
                     <td>{{object.created}}</td>
                     <td>{{object.total}}</td>
                     <td><a href="{%url 'mainapp:dashboard' object.pk %}"> Ver grafico de radar</a></td>

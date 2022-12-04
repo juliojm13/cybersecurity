@@ -6,9 +6,9 @@ urlpatterns = [
     path('', index_view, name="index"),
     path('login/', login, name="login"),
     path('logout/', logout, name="logout"),
-    path('diagnostic/', diagnostic, name="diagnostic"),
+    path('diagnostic/<int:pk>', diagnostic, name="diagnostic"),
     path('organization/', organisation, name="organisation"),
     path('organizationform/', organisation_form, name="orgform"),
-    path('results/', results, name="results"),
+    path('results/<int:pk>', results, name="results"),
     path('dashboard/<int:pk>/', dashboard, name="dashboard"),
 ]
