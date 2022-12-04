@@ -3558,7 +3558,20 @@ fieldset.field-second.org ul.dropdownvisible{
     display: flex;
 
 }
-
 div.selection{
-    flex: 0 0 20%;
+    flex-basis: 40%;
+    flex-grow: 3;
 }
+div.field{
+    flex-grow: 1;
+}
+.trigger{
+    width: 80% !important;
+}
+.activetrigger{
+    width: 80% !important;
+}
+.dropcontainer ul{
+    width: 80% !important;
+}
+
