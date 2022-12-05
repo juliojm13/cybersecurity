@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-    <title>Microredes</title>
+    <title>Micro-redes</title>
 {% endblock %}
 
 {% block head %}
@@ -33,18 +33,18 @@
 <div class="white_shd full margin_bottom_30">
     <div class="full graph_head">
         <div class="heading1 margin_0">
-            <h2>Seleccione su microred de la lista </h2>
+            <h2>Seleccione su micro-red de la lista </h2>
         </div>
     </div>
     <div class="table_section padding_infor_info">
         <div class="table-responsive-sm">
 
             <fieldset class="field-second org">
-                <h1><label class="col-md-8">¿Su microred está en la lista?</label></h1>
+
               <div class="wrapper">
                       <div class=" select_wrp selection">
-                          <select class="js-select2" id="select-org" placeholder="Seleccione una microred">
-                              <option value="">Seleccione una microred</option>
+                          <select class="js-select2" id="select-org" placeholder="Seleccione una micro-red">
+                              <option value="">Seleccione una micro-red</option>
                             {% for object in object_list %}
                                 <option value= "{{ object.pk }}" onClick="getId(event)">{{ object }}</option>
                             {% endfor %}
@@ -61,8 +61,8 @@
 
             </fieldset>
 
-                    <div class="button_block margin_top_50">
-                        <a href="{% url 'mainapp:orgform' %}" type="submit" class="btn cur-p btn-outline-secondary">Añadir microred</a>
+                    <div class="button_block margin_top_70">
+                        <a href="{% url 'mainapp:orgform' %}" type="submit" class="btn cur-p btn-outline-secondary">Añadir una nueva micro-red</a>
                     </div>
 
         </div>
@@ -89,7 +89,7 @@
               });
 
           $('.js-select2').select2({
-            placeholder: "Seleccione una microred",
+            placeholder: "Seleccione una micro-red",
             maximumSelectionLength: 2,
             language: "ru"
             });
