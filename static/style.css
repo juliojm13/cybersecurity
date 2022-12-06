@@ -564,6 +564,10 @@ a:focus {
     letter-spacing: 0px;
 }
 
+.margin_top_70 {
+    margin-top: 70px;
+}
+
 .margin_top_50 {
     margin-top: 50px;
 }
@@ -1421,6 +1425,7 @@ a[data-toggle="collapse"] {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     border-radius: 5px;
     margin-top: 0;
+    border: 25px solid white;
 }
 
 .dark_bg {
@@ -1747,7 +1752,7 @@ a[data-toggle="collapse"] {
     min-width: 125px;
     height: auto;
     float: left;
-    background: #1ed085;
+    background: #3062a2;
     text-align: center;
     color: #fff;
     padding: 10px 25px;
@@ -1766,7 +1771,7 @@ button.main_bt {
 
 .main_bt:hover,
 .main_bt:focus {
-    background: #ff5722;
+    background: #809fbe;
     color: #fff;
 }
 
@@ -2228,10 +2233,15 @@ i.icon {
     margin: 0;
 }
 
-.button_block {
-  text-align: center;
-  margin-bottom: 30px;
-}
+@media (min-width: 446px){
+    .button_block {
+      text-align: center;
+      margin-bottom: 60px;}}
+
+@media (max-width: 446px){
+    .button_block {
+        text-align: left;
+        margin: 0 0 30px 20px;}}
 
 
 /** pagination **/
@@ -3556,22 +3566,109 @@ fieldset.field-second.org ul.dropdownvisible{
 }
 .wrapper{
     display: flex;
-
+    margin: 20px;
 }
+@media (max-width: 950px){
+    .wrapper{
+        flex-direction: column;
+    }}
+
 div.selection{
     flex-basis: 40%;
     flex-grow: 3;
 }
 div.field{
     flex-grow: 1;
+    color:white;
 }
-.trigger{
-    width: 80% !important;
-}
-.activetrigger{
-    width: 80% !important;
-}
-.dropcontainer ul{
-    width: 80% !important;
-}
+@media (min-width: 446px) and (max-width: 950px){
+    div.field{
+        margin: 20px auto;
+    }}
 
+@media (max-width: 446px){
+    div.field{
+        margin: 20px 0;
+    }}
+#to-results{
+    width: 210px;
+}
+#to-diagnostic{
+    width: 210px;
+}
+/*
+#select-org{
+    width: 80%;
+    height: 44px;
+    border-radius: 5px;
+    font-size: 15px;
+    padding-left: 20px;
+    appearance: none;
+    background: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0Ljk1IDEwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9LmNscy0ye2ZpbGw6IzQ0NDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmFycm93czwvdGl0bGU+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iNC45NSIgaGVpZ2h0PSIxMCIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxLjQxIDQuNjcgMi40OCAzLjE4IDMuNTQgNC42NyAxLjQxIDQuNjciLz48cG9seWdvbiBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMy41NCA1LjMzIDIuNDggNi44MiAxLjQxIDUuMzMgMy41NCA1LjMzIi8+PC9zdmc+) no-repeat 95% 50%;
+    border: 1px solid #3062a2;
+    color: #07336a;
+}
+*/
+.select2-selection.select2-selection--single{
+    width: 150%;
+    height: 44px !important;
+}
+@media (max-width: 446px){
+    .select2-selection.select2-selection--single {
+        width: 100%;
+        height: 44px !important; }}
+
+@media (max-width: 446px){
+    .select2-container--default .select2-selection--single .select2-selection__placeholder {
+        font-size: 12px !important;}}
+
+@media (max-width: 446px){
+    .select2-container--default .select2-selection--single .select2-selection__arrow {
+        top: 10px !important;
+        right: -17px !important;}}
+
+@media (min-width: 446px){
+    .select2-container--default .select2-selection--single .select2-selection__arrow {
+        top: 5px !important;
+        right: -110px !important;}}
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+    padding-top: 5px;
+}
+@media (min-width: 446px){
+    .select2-container--open .select2-dropdown--below {
+        width: 306px !important;
+        top: -23px;}}
+@media (max-width: 446px){
+    .select2-container--open .select2-dropdown--below {
+        width: 204px !important;
+        top: -23px;}}
+
+@media (max-width: 768px){
+    .col-md-10 {
+        font-size: 14px;}}
+
+.select2-container--default .select2-selection--single {
+    min-width: 204px;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    padding-top: 5px;
+}
+.menu.active{
+    background: #d9d9e073;}
+@media (min-width: 950px){
+    .noresult{
+        text-align: center;
+        margin: auto 300px !important;
+    }}
+
+@media (min-width: 500px) and (max-width: 950px){
+    .noresult{
+        text-align: center;
+        margin: auto 100px !important;
+    }}
+
+@media (max-width: 500px){
+    .noresult{
+        text-align: center;
+        margin: auto 10px !important;
+    }}

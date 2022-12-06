@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-    <title>Microredes</title>
+    <title>Micro-redes</title>
 {% endblock %}
 
 {% block head %}
@@ -16,55 +16,64 @@
         padding: 0;
       }
     </style>
+
+    <link rel="stylesheet" href="https://snipp.ru/cdn/select2/4.0.13/dist/css/select2.min.css">
+    <style type="text/css">
+    .select_wrp {
+        width: 300px;
+        margin: 0 auto;
+    }
+    </style>
+    <script src="https://snipp.ru/cdn/select2/4.0.13/dist/js/select2.min.js"></script>
+    <script src="https://snipp.ru/cdn/select2/4.0.13/dist/js/i18n/ru.js"></script>
+
 {% endblock %}
 
 {% block content %}
 <div class="white_shd full margin_bottom_30">
     <div class="full graph_head">
         <div class="heading1 margin_0">
-            <h2>Seleccione su microred de la lista </h2>
+            <h2>Seleccione su micro-red de la lista </h2>
         </div>
     </div>
     <div class="table_section padding_infor_info">
         <div class="table-responsive-sm">
 
             <fieldset class="field-second org">
-                <h1><label class="col-md-8">¿Su microred está en la lista?</label></h1>
+
               <div class="wrapper">
-                      <div class="selection">
-                          <select id="select-org" name="organisation">
-                            <option value="0">Seleccione una microred</option>
+                      <div class=" select_wrp selection">
+                          <select class="js-select2" id="select-org" placeholder="Seleccione una micro-red">
+                              <option value="">Seleccione una micro-red</option>
                             {% for object in object_list %}
                                 <option value= "{{ object.pk }}" onClick="getId(event)">{{ object }}</option>
-
                             {% endfor %}
                           </select>
                       </div>
+
                       <div class="field">
-                         <label class="label_field hidden">hidden label</label>
                          <a type="submit" id="to-diagnostic" class="main_bt">Realizar diagnostico</a>
                       </div>
                       <div class="field">
-                         <label class="label_field hidden">hidden label</label>
                          <a type="submit" id="to-results" class="main_bt">Ver resultados</a>
                       </div>
               </div>
 
             </fieldset>
 
-
-
-                    <div class="button_block">
-                        <a href="{% url 'mainapp:orgform' %}" type="submit" class="btn cur-p btn-outline-secondary">Añadir microred</a>
+                    <div class="button_block margin_top_70">
+                        <a href="{% url 'mainapp:orgform' %}" type="submit" class="btn cur-p btn-outline-secondary">Añadir una nueva micro-red</a>
                     </div>
 
-
         </div>
+
     </div>
+
 </div>
 
 <!--radar chart-->
 <div class="full" id="radar"></div>
+
 
 {% endblock %}
 
@@ -78,7 +87,15 @@
                  $('#to-diagnostic').attr('href',`/diagnostic/${getValue}`);
                  $('#to-results').attr('href',`/results/${getValue}`);
               });
+
+          $('.js-select2').select2({
+            placeholder: "Seleccione una micro-red",
+            maximumSelectionLength: 2,
+            language: "ru"
+            });
         })
       })
       </script>
+
+
 {% endblock %}
