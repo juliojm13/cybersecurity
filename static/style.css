@@ -3629,6 +3629,12 @@ div.field{
 
 @media (min-width: 446px){
     .select2-container--default .select2-selection--single .select2-selection__arrow {
+        top: 10px !important;
+        right: 10px !important;
+    }}
+
+@media (min-width: 446px){
+    .select2-container--default .select2-selection--single .select2-selection__arrow {
         top: 5px !important;
         right: -110px !important;}}
 .select2-container--default .select2-selection--single .select2-selection__placeholder {
