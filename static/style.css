@@ -3568,7 +3568,7 @@ fieldset.field-second.org ul.dropdownvisible{
     display: flex;
     margin: 20px;
 }
-@media (max-width: 950px){
+@media (max-width: 1250px){
     .wrapper{
         flex-direction: column;
     }}
@@ -3581,7 +3581,7 @@ div.field{
     flex-grow: 1;
     color:white;
 }
-@media (min-width: 446px) and (max-width: 950px){
+@media (min-width: 446px) and (max-width: 1250px){
     div.field{
         margin: 20px auto;
     }}
@@ -3636,7 +3636,7 @@ div.field{
 }
 @media (min-width: 446px){
     .select2-container--open .select2-dropdown--below {
-        width: 306px !important;
+        width: 316px !important;
         top: -23px;}}
 @media (max-width: 446px){
     .select2-container--open .select2-dropdown--below {
@@ -3655,13 +3655,13 @@ div.field{
 }
 .menu.active{
     background: #d9d9e073;}
-@media (min-width: 950px){
+@media (min-width: 1250px){
     .noresult{
         text-align: center;
         margin: auto 300px !important;
     }}
 
-@media (min-width: 500px) and (max-width: 950px){
+@media (min-width: 500px) and (max-width: 1250px){
     .noresult{
         text-align: center;
         margin: auto 100px !important;
