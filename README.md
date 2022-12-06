@@ -63,6 +63,7 @@ pip install -r requarement.txt
 ```
 
 After installing, we can finally run locally our project, use:
+
 For Windows:
 
 ```
@@ -71,7 +72,7 @@ python manage.py runserver
 
 For Linux/Mac:
 ```
-python manage.py runserver
+python3 manage.py runserver
 ```
 Now the project is runing!
 You can click the link in that is in the console to open the project in the browser (ussually is this one: http://127.0.0.1:8000/)
