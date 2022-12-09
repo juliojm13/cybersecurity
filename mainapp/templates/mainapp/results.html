@@ -25,7 +25,7 @@
                         <tr>
                             <th>ID</th>
                             <th>Micro-red</th>
-                            <th>Fecha del diagnostico</th>
+                            <th>Fecha del diagnóstico</th>
                             <th>Puntaje total</th>
                             <th>Link</th>
                         </tr>
@@ -61,15 +61,46 @@
         var canvasElement = document.getElementById("barChart")
         var dates = []
         var scores = []
+        var backgroundColors = []
+        var borderColors = []
+        var total;
+        var red = "#FF0000";
+        var orange = "#FF8C00";
+        var lightGreen = "#98FB98";
+        var green = "#008000";
         {% for object in data %}
         dates.push('{{object.created}}')
         scores.push({{object.total}})
+        total = {{object.total}}
+        if (total <= 250) {
+            backgroundColors.push(red)
+            borderColors.push(red)
+        }
+        else if (total > 250 && total <= 500) {
+            backgroundColors.push(orange)
+            borderColors.push(orange)
+        } else if (total > 500 && total <= 750) {
+            backgroundColors.push(lightGreen)
+            borderColors.push(lightGreen)
+        } else if (total > 750) {
+            backgroundColors.push(green)
+            borderColors.push(green)
+        }
         {%endfor%}
         var config = {
             type: "bar",
             data: {
             labels: dates,
-            datasets: [{label: "Puntaje", data:scores}],
+            datasets: [
+                {
+                    label: "Puntaje",
+                    data:scores,
+                    backgroundColor: backgroundColors,
+                    borderColor: borderColors,
+                    }
+
+            ],
+
             },
         }
         var barChart = new Chart(canvasElement,config)

@@ -52,7 +52,7 @@
             </div>
             {% if not request.user.is_authenticated %}
             <div class="read_more">
-                <div class="center"><a class="main_bt read_bt" href="{% url 'mainapp:login' %}">Iniciar sesion</a></div>
+                <div class="center"><a class="main_bt read_bt" href="{% url 'mainapp:login' %}">Iniciar sesión </a></div>
             </div>
             {%else%}
             <div class="read_more">
@@ -60,6 +60,10 @@
                     micro-red</a></div>
             </div>
             {% endif %}
+              <button type="submit">
+                <a style="text-decoration: none;color: inherit;" onclick="this.href='data:text/html;charset=UTF-8,'+encodeURIComponent(document.documentElement.outerHTML)" href="#" download="page.html">Download</a>
+                </button>
+
         </div>
     </div>
 </div>

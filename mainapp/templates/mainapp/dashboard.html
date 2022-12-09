@@ -19,7 +19,7 @@
 <div class="white_shd full margin_bottom_30">
     <div class="full graph_head">
         <div class="heading1 margin_0">
-            <h2>Resultado del diagnoscico del {{object.created}}</h2>
+            <h2>Resultado del diagnóstico del {{object.created}}</h2>
         </div>
     </div>
     <div class="table_section padding_infor_info">
@@ -27,7 +27,7 @@
             <table class="table table-bordered">
                 <thead>
                 <tr>
-                    <th>Modelo</th>
+                    <th>Dominio</th>
                     <th>Puntaje</th>
                 </tr>
                 </thead>
@@ -57,11 +57,11 @@
                     <td>{{object.iic}}</td>
                 </tr>
                 <tr>
-                    <td>Respuesta a Incidentes:</td>
+                    <td>Respuesta a Incidentes</td>
                     <td>{{object.ri}}</td>
                 </tr>
                 <tr>
-                    <td>Gestión de dependencias externas:</td>
+                    <td>Gestión de dependencias externas</td>
                     <td>{{object.gde}}</td>
                 </tr>
                 <tr>
@@ -88,16 +88,16 @@
 <script>
   anychart.onDocumentReady(function () {
     var data1 = [
-  {x: "gr", value: {{object.gr}}},
-  {x: "ga", value: {{object.ga}}},
-  {x: "gia", value: {{object.gia}}},
-  {x: "gav", value: {{object.gav}}},
-  {x: "cea", value: {{object.cea}}},
-  {x: "iic ", value: {{object.iic}}},
-  {x: "ri", value: {{object.ri}}},
-  {x: "gde", value: {{object.gde}}},
-  {x: "cp", value: {{object.cp}}},
-  {x: "gpc", value: {{object.gpc}}},
+  {x: "Gestión de riesgos", value: {{object.gr}}},
+  {x: "Gestión de activos", value: {{object.ga}}},
+  {x: "Gestión de identidad y acceso", value: {{object.gia}}},
+  {x: "Gestión de amenazas y vulnerabilidades", value: {{object.gav}}},
+  {x: "Conciencia del Estado Actual", value: {{object.cea}}},
+  {x: "Intercambio de Información y Comunicaciones ", value: {{object.iic}}},
+  {x: "Respuesta a Incidentes", value: {{object.ri}}},
+  {x: "Gestión de dependencias externas", value: {{object.gde}}},
+  {x: "Capacitación del personal ", value: {{object.cp}}},
+  {x: "Gestión de programa de ciberseguridad", value: {{object.gpc}}},
  ];
 
 var chart = anychart.radar();
@@ -109,7 +109,7 @@ chart.yScale()
 
 chart.area(data1).name('Results').markers(true).fill("#E55934", 0.3).stroke("#E55934")
 
-chart.title("Resultados del diagnostico");
+chart.title("Resultados del diagnóstico");
 
 chart.container('radar');
 chart.draw();

@@ -65,7 +65,7 @@
                     {% if not request.user.is_authenticated %}
                     <li class="menu {% if request.resolver_match.view_name == 'mainapp:login'%} active {% endif %}">
                       <a href="{% url 'mainapp:login' %}">
-                          <i class="fa fa-male orange_color"></i><span>Iniciar sesion</span>
+                          <i class="fa fa-male orange_color"></i><span>Iniciar sesión</span>
                       </a>
                     </li>
                     {% else %}
